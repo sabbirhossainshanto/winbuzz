@@ -1,0 +1,97 @@
+.mobile-sidebar-container {
+  position: fixed;
+  z-index: 101;
+  background-color: rgba(0, 0, 0, 0.475);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+.sbar_collapsed {
+  position: fixed;
+  width: 100%;
+  left: 0;
+}
+
+.sidebar-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 102;
+  height: 100vh;
+  width: 60%;
+  overflow: hidden;
+  background: var(--primary-bg);
+  box-shadow: 2px 0 32px rgba(0, 0, 0, 0.05);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  opacity: 0.99;
+}
+
+.sidebar-logo {
+  position: relative;
+  width: 150px;
+  margin: auto;
+  padding-top: 20px;
+  border-bottom: #ebebeb 1px solid;
+}
+
+.sidebar-logo .closebtn {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  right: -20px;
+  top: 0;
+  color: #fff;
+  font-size: 15px;
+  background: #ffffff40;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.main-menu {
+  height: calc(100% - 100px);
+  overflow: hidden;
+  padding: 12px 0 0 0;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.menu-inner {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.metismenu li {
+  margin-left: 0px;
+  margin-right: 0px;
+  border-bottom: 1px solid #ffffff1f;
+}
+
+.metismenu li a {
+  position: relative;
+  display: flex;
+  color: var(--primary-color) !important;
+  font-size: 12px;
+  text-transform: capitalize;
+  padding: 10px 15px;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.menu-icon {
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff26;
+  padding: 5px;
+  border-radius: 100px;
+}
+
+.metismenu li a span {
+  margin-left: 10px;
+}

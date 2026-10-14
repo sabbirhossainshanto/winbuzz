@@ -1,0 +1,276 @@
+.sc_cw-container-main {
+  padding: 0;
+  background:
+    linear-gradient(0deg, rgb(0 0 0 / 39%), rgb(0 0 0 / 30%)),
+    url(/icon/desktop.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: auto;
+  margin-left: auto;
+  color: white;
+  height: 168px;
+  align-items: center;
+  display: grid;
+  background-position: bottom;
+  position: relative;
+}
+
+.sc_cw-row-ctm {
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  /* Vertically centers content */
+  justify-content: center;
+  /* Horizontally centers content */
+  text-align: center;
+  /* Ensures text inside elements is centered */
+  padding: 0px;
+  width: 100%;
+  /* Ensures it takes the full available width */
+}
+
+.sc_cw-team {
+  flex: 0 0 10%;
+  max-width: 10%;
+  text-align: center;
+}
+
+.sc_cw-match_status {
+  flex: 0 0 45%;
+  max-width: 45%;
+  text-align: center;
+  align-items: center;
+  /* Vertically centers content */
+  justify-content: center;
+  /* Horizontally centers content */
+  text-align: center;
+  /* Ensures text inside elements is centered */
+  font-weight: 00;
+  font-size: 10px;
+  letter-spacing: 0px;
+  padding: 4px 0;
+}
+
+.sc_cw-inn1 {
+  font-size: 10px;
+  font-weight: 00;
+  font-style: italic;
+  color: #fff;
+  width: max-content;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.sc_cw-curr_inn {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.sc_cw-team_name {
+  text-transform: capitalize;
+  font-size: 14px;
+  margin: 0;
+  font-weight: 00;
+}
+
+.sc_cw-day {
+  width: 100%;
+  display: block;
+  text-transform: capitalize;
+  font-size: 10px;
+}
+
+.sc_cw-status {
+  width: 100%;
+}
+
+.sc_cw-day:before {
+  color: #fff;
+  margin: 0 5px;
+}
+
+.sc_cw-day:after {
+  color: #fff;
+  margin: 0 5px;
+}
+
+.sc_cw-team_name img {
+  padding-left: 5px;
+  vertical-align: middle;
+}
+
+.sc_cw-score-over ul {
+  padding: 0;
+  margin: 0;
+}
+
+.sc_cw-score-over ul li {
+  display: inline-block;
+  color: #fff;
+}
+
+.sc_cw-score-over ul li p {
+  margin: 0;
+}
+
+.sc_cw-six-balls {
+  padding: 2px;
+  font-size: 17px;
+  font-weight: 600 !important;
+}
+
+.sc_cw-target {
+  font-size: 10px;
+  margin: 0;
+}
+
+.sc_cw-commantry2 {
+  font-size: 16px;
+  display: block;
+}
+
+@-webkit-keyframes txt {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes txt {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.sc_cw-batsman-container {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  /* Vertically centers content */
+  justify-content: center;
+  /* Horizontally centers content */
+  text-align: center;
+  /* Ensures text inside elements is centered */
+  padding: 0px;
+  width: 100%;
+  /* Ensures it takes the full available width */
+  text-align: center !important;
+  /* Ensures space between striker and non-striker */
+  gap: 20%;
+  /* Optional: Adds space between items */
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.sc_cw-requiredRunRate {
+  margin-top: 5px !important;
+  font-size: 12px !important;
+  font-weight: 100;
+}
+@media only screen and (max-width: 767px) {
+  .sc_cw-container-main {
+    height: 168px !important;
+    background:
+      linear-gradient(0deg, rgba(0, 0, 0, 0.39), rgba(0, 0, 0, 0.3)),
+      url(/icon/mobile.webp);
+    /* Mobile background */
+    background-size: cover;
+    background-position: center;
+  }
+
+  .sc_cw-batsman-container {
+    flex-direction: column;
+    text-transform: uppercase;
+    align-items: center;
+    font-size: 10px !important;
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* Vertically centers content */
+    justify-content: center;
+    /* Horizontally centers content */
+    text-align: center;
+    /* Ensures text inside elements is centered */
+    padding: 0px;
+    width: 100%;
+    /* Ensures it takes the full available width */
+    text-align: center !important;
+    /* Ensures space between striker and non-striker */
+    gap: 20%;
+    /* Optional: Adds space between items */
+    font-weight: 600;
+  }
+
+  .sc_cw-bowler_svg,
+  .sc_cw-batsman_svg {
+    display: none !important;
+  }
+
+  .sc_cw-six-balls {
+    padding: 2px;
+    font-size: 12px;
+    font-weight: 600 !important;
+  }
+
+  .sc_cw-team {
+    flex: 0 0 20%;
+    max-width: 20%;
+    text-align: center;
+    font-size: 10px !important;
+  }
+
+  .sc_cw-match_status {
+    flex: 0 0 45%;
+    max-width: 45%;
+    text-align: center;
+    align-items: center;
+    /* Vertically centers content */
+    justify-content: center;
+    /* Horizontally centers content */
+    text-align: center;
+    /* Ensures text inside elements is centered */
+    font-weight: 00;
+    font-size: 10px !important;
+    letter-spacing: 0px;
+    padding: 4px 0;
+  }
+  .sc_cw-commantry2 {
+    font-size: 14px;
+    display: block;
+  }
+
+  .sc_cw-requiredRunRate {
+    margin-top: 5px !important;
+    font-size: 10px !important;
+    font-weight: 400;
+  }
+}

@@ -1,0 +1,18 @@
+:root {
+  --primary-gradient-color: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  --top-nav: linear-gradient(180deg, #5f7fdb 0, #0cddff 100%);
+  --primary-bg: #67081d;
+  --primary-color: #fff;
+}
+
+/* :root {
+  --primary-gradient-color: transparent
+    linear-gradient(94deg, #b6842d, #ebda8d 55%, #b7862f);
+  --primary-bg: #b88831;
+  --primary-color: #000;
+} */
