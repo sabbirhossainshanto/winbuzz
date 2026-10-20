@@ -27,6 +27,9 @@ import HorseRacing from "../pages/HorseRacing/HorseRacing";
 import GreyhoundRacing from "../pages/GreyhoundRacing/GreyhoundRacing";
 import InPlay from "../pages/InPlay/InPlay";
 import BonusStatement from "../pages/BonusStatement/BonusStatement";
+import Login from "../pages/Login/Login";
+import Registration from "../pages/Registration/Registration";
+import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
 
 export const router = createBrowserRouter(
   [
@@ -144,6 +147,18 @@ export const router = createBrowserRouter(
           element: <BonusStatement />,
         },
       ],
+    },
+    {
+      path: "/login",
+      element: <Login />,
+    },
+    {
+      path: "/registration",
+      element: <Registration />,
+    },
+    {
+      path: "/forgot-password",
+      element: <ForgotPassword />,
     },
   ],
   {
