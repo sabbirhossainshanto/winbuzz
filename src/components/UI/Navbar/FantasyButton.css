@@ -1,0 +1,106 @@
+.fantasy-header-btn li .nav_item {
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  /* border-radius: 9999px; */
+  padding: 5px;
+  color: #440a57;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: -moz-max-content;
+  width: max-content;
+  border: 1px solid #ebecf0;
+  /* height: 28px; */
+  line-height: 1.5;
+}
+.fantasy-header-btn li {
+  flex: 0 0 auto;
+  list-style: none;
+}
+.fantasy-header-btn .nav_item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.fantasy-header-btn .nav_item img {
+  width: 18px;
+  height: 18px;
+}
+.fantasy-header-btn li .nav_item {
+  padding: 4px 8px 4px 4px;
+  gap: 4px;
+}
+.fantasy-header-btn .nav_item img {
+  width: 16px;
+  height: 16px;
+}
+.fantasy-header-btn li .nav_item {
+  background: linear-gradient(90deg, #4e0916, #b41433);
+  color: #fff !important;
+  border: solid 1px #ffc510;
+  box-shadow: 0 0 2px #ab1331;
+  height: 100%;
+}
+.taj_icon_img {
+  background: linear-gradient(
+    144.9deg,
+    #b41433 8.96%,
+    #4b1d26 40.26% 63.45%,
+    #b41433 86.24%
+  );
+  border: 1px solid #ffc510;
+  border-radius: 30px;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fantasy-header-btn .nav_item .taj_icon_img img {
+  width: auto;
+  height: auto;
+  max-width: 16px;
+  margin-left: -1px;
+}
+.fantasy-header-btn {
+  position: relative;
+}
+.fantasy-header-btn .nav_item.c_text {
+  gap: 6px;
+  text-decoration: none;
+}
+.fantasy_new_tag {
+  position: absolute;
+  top: -10px;
+  right: -5px;
+}
+.fantasy_new_tag span {
+  position: absolute;
+  top: 60%;
+  left: 42%;
+  font-weight: 900;
+  font-size: 9px;
+  background: linear-gradient(180deg, #e80d2a, #7d0304);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  line-height: 1.2;
+  font-size: 6px;
+  font-style: italic;
+  transform: translate(-50%, -50%);
+}
+.fantasy_new_tag img {
+  width: 39px;
+}
+@media screen and (max-width: 768px) {
+  ::-webkit-scrollbar {
+    height: 6px;
+    width: 4px;
+  }
+  .fantasy-header-btn .nav_item img {
+    display: block;
+  }
+}

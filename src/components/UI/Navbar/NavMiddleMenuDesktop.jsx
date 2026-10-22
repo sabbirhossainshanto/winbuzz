@@ -1,15 +1,47 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { latestEvent } from "../../../static/latest-event";
 import { LanguageKey } from "../../../const";
 import { eventNameList } from "../../../static/event-name-list";
 import useLanguage from "../../../hooks/use-language";
+import FantasyButton from "./FantasyButton";
+import { useDispatch, useSelector } from "react-redux";
+import toast from "react-hot-toast";
+import { Settings } from "../../../api";
+import { useState } from "react";
+import { setShowLoginModal } from "../../../redux/features/global/globalSlice";
+import WarningCondition from "../../modals/WarningCondition/WarningCondition";
 
 const NavMiddleMenuDesktop = () => {
+  const dispatch = useDispatch();
+  const [showWarning, setShowWarning] = useState(false);
+  const [gameInfo, setGameInfo] = useState({ gameName: "", gameId: "" });
+  const navigate = useNavigate();
+  const { token, bonusToken } = useSelector((state) => state.auth);
   const { getLanguage } = useLanguage();
+
+  const handleNavigateToIFrame = (name, id) => {
+    if (token) {
+      if (bonusToken) {
+        return toast.error("Bonus wallet is available only on sports.");
+      }
+      if (Settings.casino_currency !== "AED") {
+        navigate(`/casino/${name}/${id}`);
+      } else {
+        setGameInfo({ gameName: "", gameId: "" });
+        setGameInfo({ gameName: name, gameId: id });
+        setShowWarning(true);
+      }
+    } else {
+      dispatch(setShowLoginModal(true));
+    }
+  };
   return (
-    <section className="nav-new-bar-sec hidden md:block">
+    <section className="nav-new-bar-sec hidden md:block ">
+      {showWarning && (
+        <WarningCondition gameInfo={gameInfo} setShowWarning={setShowWarning} />
+      )}
       <div className="nav-middle-menu">
-        <ul>
+        <ul style={{ padding: "5px 0px" }}>
           <li>
             <Link
               aria-current="page"
@@ -109,6 +141,10 @@ const NavMiddleMenuDesktop = () => {
               <span> {getLanguage(LanguageKey.GREYHOUND)}</span>
             </Link>
           </li>
+          <FantasyButton
+            onClick={() => handleNavigateToIFrame("fantasy-11", "595001")}
+            label={getLanguage(LanguageKey.FANTASY_11)}
+          />
           {eventNameList.map((item) => {
             return (
               <li key={item.id}>

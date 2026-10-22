@@ -5,11 +5,16 @@ import { latestEvent } from "../../../static/latest-event";
 import { LanguageKey } from "../../../const";
 import { eventNameList } from "../../../static/event-name-list";
 import useLanguage from "../../../hooks/use-language";
+import FantasyButton from "./FantasyButton";
+import { useState } from "react";
+import { Settings } from "../../../api";
+import toast from "react-hot-toast";
+import WarningCondition from "../../modals/WarningCondition/WarningCondition";
 
 const NavbarMiddleMenuMobile = () => {
   const { getLanguage } = useLanguage();
   const { pathname } = useLocation();
-  const { token } = useSelector((state) => state.auth);
+  const { token, bonusToken } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleNavigateAfterCheckAuth = (link) => {
@@ -19,9 +24,32 @@ const NavbarMiddleMenuMobile = () => {
       dispatch(setShowLoginModal(true));
     }
   };
+
+  const [showWarning, setShowWarning] = useState(false);
+  const [gameInfo, setGameInfo] = useState({ gameName: "", gameId: "" });
+
+  const handleNavigateToIFrame = (name, id) => {
+    if (token) {
+      if (bonusToken) {
+        return toast.error("Bonus wallet is available only on sports.");
+      }
+      if (Settings.casino_currency !== "AED") {
+        navigate(`/casino/${name}/${id}`);
+      } else {
+        setGameInfo({ gameName: "", gameId: "" });
+        setGameInfo({ gameName: name, gameId: id });
+        setShowWarning(true);
+      }
+    } else {
+      dispatch(setShowLoginModal(true));
+    }
+  };
   return (
     <div className="exchange-menu-wrapper d-md-none">
-      <ul className="subnav">
+      {showWarning && (
+        <WarningCondition gameInfo={gameInfo} setShowWarning={setShowWarning} />
+      )}
+      <ul className="subnav" style={{ alignItems: "center" }}>
         <li className={` ${pathname === "/" ? "active" : ""}`}>
           <Link to="/in-play" className="subnav-link ">
             <img src="/icon/in-play.png" />
@@ -100,7 +128,7 @@ const NavbarMiddleMenuMobile = () => {
             {getLanguage(LanguageKey.SPORTSBOOK)}{" "}
           </a>
         </li>
-        <li
+        {/* <li
           className={` ${pathname === "/casino/fantasy-11/595001" ? "active" : ""}`}
         >
           <a
@@ -112,7 +140,11 @@ const NavbarMiddleMenuMobile = () => {
             <img alt="" src="/icon/99991.png" />{" "}
             {getLanguage(LanguageKey.FANTASY_11)}{" "}
           </a>
-        </li>
+        </li> */}
+        <FantasyButton
+          onClick={() => handleNavigateToIFrame("fantasy-11", "595001")}
+          label={getLanguage(LanguageKey.FANTASY_11)}
+        />
         <li>
           <Link to="/horse-racing" className="subnav-link">
             <img alt="" src="/icon/7.png" />{" "}
