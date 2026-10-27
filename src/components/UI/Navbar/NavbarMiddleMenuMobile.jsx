@@ -50,6 +50,19 @@ const NavbarMiddleMenuMobile = () => {
         <WarningCondition gameInfo={gameInfo} setShowWarning={setShowWarning} />
       )}
       <ul className="subnav" style={{ alignItems: "center" }}>
+        <li
+          className={` ${pathname === "/casino/aviator/201206" ? "active" : ""}`}
+        >
+          <a
+            onClick={() =>
+              handleNavigateAfterCheckAuth("/casino/aviator/201206")
+            }
+            className="subnav-link"
+          >
+            <img alt="" src="/icon/aviator.png" />{" "}
+            {getLanguage(LanguageKey.AVIATOR)}{" "}
+          </a>
+        </li>
         <li className={` ${pathname === "/" ? "active" : ""}`}>
           <Link to="/in-play" className="subnav-link ">
             <img src="/icon/in-play.png" />

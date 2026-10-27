@@ -43,6 +43,21 @@ const NavMiddleMenuDesktop = () => {
       <div className="nav-middle-menu">
         <ul style={{ padding: "5px 0px" }}>
           <li>
+            <a
+              onClick={() => handleNavigateToIFrame("aviator", "201206")}
+              aria-current="page"
+              className="router-link-active router-link-exact-active"
+            >
+              <img
+                loading="lazy"
+                src="/icon/aviator.png"
+                alt="In Play"
+                className="nav-icon"
+              />
+              <span>{getLanguage(LanguageKey.AVIATOR)}</span>
+            </a>
+          </li>
+          <li>
             <Link
               aria-current="page"
               to="/in-play"

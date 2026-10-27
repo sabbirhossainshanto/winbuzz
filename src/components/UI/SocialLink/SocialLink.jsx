@@ -1,10 +1,14 @@
 import { Fragment, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Settings } from "../../../api";
 import MiniGames from "../../modals/MiniGames/MiniGames";
 import images from "../../../assets/images";
+import { useNavigate } from "react-router-dom";
+import { setShowLoginModal } from "../../../redux/features/global/globalSlice";
 
 const SocialLink = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [showMiniGamesModal, setShowMiniGamesModal] = useState(false);
   const { token } = useSelector((state) => state.auth);
 
@@ -13,6 +17,14 @@ const SocialLink = () => {
       window.open(Settings?.branchWhatsapplink, "_blank");
     } else {
       window.open(Settings?.whatsapplink, "_blank");
+    }
+  };
+
+  const handleNavigateToIFrame = (name, id) => {
+    if (token) {
+      navigate(`/casino/${name}/${id}`);
+    } else {
+      dispatch(setShowLoginModal(true));
     }
   };
   return (
@@ -29,6 +41,13 @@ const SocialLink = () => {
               alignItems: "center",
             }}
           >
+            <a onClick={() => handleNavigateToIFrame("aviator", "201206")}>
+              <img
+                style={{ filter: "none", height: "40px", width: "40px" }}
+                src="/icon/aviator.png"
+              />
+            </a>
+
             {Settings?.instagramLink ? (
               <a onClick={() => window.open(Settings?.instagramLink, "_blank")}>
                 <img
