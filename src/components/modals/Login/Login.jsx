@@ -53,7 +53,7 @@ const Login = () => {
       localStorage.setItem("token", token);
       localStorage.setItem("bonusToken", bonusToken);
       if (banner) {
-        localStorage.setItem("banner", banner);
+        localStorage.setItem("banner", JSON.stringify(banner));
         dispatch(setShowBanner(true));
       }
       if (result?.result?.changePassword) {
@@ -96,7 +96,7 @@ const Login = () => {
 
       localStorage.setItem("bonusToken", bonusToken);
       if (banner) {
-        localStorage.setItem("banner", banner);
+        localStorage.setItem("banner", JSON.stringify(banner));
         dispatch(setShowBanner(true));
       }
       if (token && user) {

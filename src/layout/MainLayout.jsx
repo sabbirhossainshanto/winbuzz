@@ -8,10 +8,12 @@ import { useSelector } from "react-redux";
 import DepositWithdrawBTN from "../components/UI/DepositWithdrawBTN/DepositWithdrawBTN";
 import LeftMobileSidebar from "../components/UI/LeftMobileSidebar/LeftMobileSidebar";
 import { Settings } from "../api";
+import Banner from "../components/modals/Banner/Banner";
 
 const MainLayout = () => {
   const { pathname } = useLocation();
   const { token } = useSelector((state) => state.auth);
+  const { showBanner } = useSelector((state) => state.global);
   return (
     <Fragment>
       {Settings.metaDescription && (
@@ -25,6 +27,7 @@ const MainLayout = () => {
       )}
       {Settings.metaTitle && <title>{Settings.metaTitle}</title>}
       <meta name="robots" content="index, follow" />
+      {showBanner && <Banner />}
       <LeftMobileSidebar />
       <Navbar />
       {token && pathname === "/" && <DepositWithdrawBTN />}
